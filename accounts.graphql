@@ -1,0 +1,22 @@
+extend schema @link(url: "https://specs.apollo.dev/federation/v2.3" import: ["@key", "@external", "@inaccessible"])
+
+interface Account {
+    id: ID!
+    name: String!
+    balance: String
+    newField: String @inaccessible
+}
+
+type Accounts {
+    reqularAccounts: [RegularAccount]
+}
+
+
+type RegularAccount @key(fields: "id") {
+    id: ID!
+}
+
+
+type Query {
+  accounts: Accounts!
+}
