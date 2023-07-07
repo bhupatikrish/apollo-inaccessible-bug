@@ -1,0 +1,13 @@
+federation_version: =2.4.7
+subgraphs:
+  brokerage:
+    routing_url: http://regular
+    schema:
+      file: ./regular.graphql
+ 
+  accounts:
+    routing_url: http://accounts
+    schema:
+      file: ./accounts.graphql
+        
+
